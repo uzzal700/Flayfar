@@ -13,13 +13,13 @@ import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
 import FlightRoundedIcon from '@mui/icons-material/FlightRounded';
 import UsbRoundedIcon from '@mui/icons-material/UsbRounded';
 import AddIcon from '@mui/icons-material/Add';
-import './TabCard.css';
-import { Box, Stack } from '@mui/material';
-
-const TabCard = () => {
+import '../TabCard.css';
+import './Card.css';
+import { Box, Paper, Stack } from '@mui/material';
+const Card1 = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Grid container>
+      <Grid container columnSpacing={8}>
         <Grid
           item
           lg={1}
@@ -54,9 +54,7 @@ const TabCard = () => {
                 },
               }}
             >
-              <Button variant={'outlined'}>
-                Dhaka <ArrowForwardIcon /> Dubai
-              </Button>
+              Dhaka <ArrowForwardIcon /> Dubai
             </Typography>
             <div>
               <Typography
@@ -89,7 +87,7 @@ const TabCard = () => {
                   },
                 }}
               >
-                10:30 . 31 May 2022 . New Delhi (DEL)
+                10:30 . 31 May 2022 . New Delhi (DEL) dddddddddddddddddddd
                 <span style={{ color: 'gray' }}>Terminal-2</span>
               </Typography>
               <Typography
@@ -259,8 +257,9 @@ const TabCard = () => {
           </div>
         </Grid>
       </Grid>
+      {/* <ListOfTabs></ListOfTabs> */}
     </Box>
   );
 };
 
-export default TabCard;
+export default Card1;

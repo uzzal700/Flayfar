@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { styled, alpha, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
@@ -31,7 +31,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import Logo from './Logo.png';
-import { Button, Grid } from '@mui/material';
+import { Button, Grid, Paper } from '@mui/material';
 import AddToSave from '../../Component/AddToSave/AddToSave';
 import LeftAndRightSide from '../LeftAndRightSide/LeftAndRightSide';
 import './Navbar.css';
@@ -161,7 +161,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const Navbar = () => {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -234,6 +234,19 @@ const Navbar = () => {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>
+        <Paper
+          sx={{
+            margin: 'auto',
+            height: '2rem',
+          }}
+          size="small"
+          variant="outlined"
+          color="inherit"
+        >
+          BDT 32288
+        </Paper>
+      </MenuItem>
     </Menu>
   );
   return (
@@ -287,7 +300,6 @@ const Navbar = () => {
                 BDT 32288
               </Button>
               <IconButton
-                size="large"
                 edge="end"
                 aria-label="account of current user"
                 aria-controls={menuId}
@@ -296,9 +308,14 @@ const Navbar = () => {
                 color="inherit"
               >
                 <AccountCircle />
-                <span>
+                <Button
+                  sx={{
+                    fontSize: '0.8rem',
+                    color: 'white',
+                  }}
+                >
                   Profile <ArrowDropDownIcon />
-                </span>
+                </Button>
               </IconButton>
             </Box>
             <Box sx={{ display: { xs: 'flex', md: 'none' } }}>

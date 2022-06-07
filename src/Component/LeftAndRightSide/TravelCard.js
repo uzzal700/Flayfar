@@ -14,16 +14,18 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import CurrencyExchangeSharpIcon from '@mui/icons-material/CurrencyExchangeSharp';
 import FlightIcon from '@mui/icons-material/Flight';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-// import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-// import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-import { Paper } from '@mui/material';
-// import FlightDetails from './FlightDetails';
+import { Paper, Zoom } from '@mui/material';
 import ViewFear from './ViewFear';
-import Scrollbars from './Scrollbars';
+import TabScroller from './Scrollar/TabScroller';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 const TravelCard = () => {
   const [flightDetails, setFlightDetails] = useState(false);
   const [viewFear, setViewFear] = useState(false);
+
+  // const [viewLess, setViewLess] = useState(false);
+  // const [showButton, setShowButton] = useState(true);
+  // const viewFearButton = '<ExpandMoreIcon/>';
   // const viewf = ' <ArrowDropUpIcon/>';
   return (
     <Paper elevation={10}>
@@ -184,9 +186,8 @@ const TravelCard = () => {
             <Button
               onClick={() => setViewFear(!viewFear)}
               variant="outlined"
-              // sx={{ width: '100px', padding: '0px' }}
               sx={{
-                width: '100px',
+                width: '120px',
                 padding: ' 0px 1px',
                 '@media (min-width: 300px) and (max-width: 480px)': {
                   fontSize: '1rem',
@@ -196,7 +197,17 @@ const TravelCard = () => {
                 },
               }}
             >
-              {!viewFear ? 'View Fear' : 'view Less'}
+              {!viewFear ? (
+                <>
+                  View More
+                  <ExpandMoreIcon />
+                </>
+              ) : (
+                <>
+                  View Less
+                  <ExpandLessIcon />
+                </>
+              )}
             </Button>
           </Grid>
         </Grid>
@@ -296,15 +307,26 @@ const TravelCard = () => {
                   },
                 }}
               >
-                Flight Details <ExpandMoreIcon />
+                {!flightDetails ? (
+                  <>
+                    Flight Details
+                    <ExpandMoreIcon />
+                  </>
+                ) : (
+                  <>
+                    Flight Less
+                    <ExpandLessIcon />
+                  </>
+                )}
+                {/* Flight Details <ExpandMoreIcon /> */}
               </Button>
             </Box>
           </Grid>
         </Grid>
       </Box>
+
       {viewFear && <ViewFear />}
-      {flightDetails && <Scrollbars />}
-      {/* <Scrollbars></Scrollbars> */}
+      {flightDetails && <TabScroller />}
     </Paper>
   );
 };
