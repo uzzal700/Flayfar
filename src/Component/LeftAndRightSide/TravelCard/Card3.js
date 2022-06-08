@@ -1,21 +1,26 @@
 import React from 'react';
-import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import Typography from '@mui/material/Typography';
-import FlightIcon from '@mui/icons-material/Flight';
-import EventSeatIcon from '@mui/icons-material/EventSeat';
 import LuggageIcon from '@mui/icons-material/Luggage';
+import AddIcon from '@mui/icons-material/Add';
+import EventSeatIcon from '@mui/icons-material/EventSeat';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
 import AirlineSeatLegroomNormalIcon from '@mui/icons-material/AirlineSeatLegroomNormal';
-import NetworkCheckIcon from '@mui/icons-material/NetworkCheck';
-import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
 import FlightRoundedIcon from '@mui/icons-material/FlightRounded';
+import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
+import NetworkCheckIcon from '@mui/icons-material/NetworkCheck';
 import UsbRoundedIcon from '@mui/icons-material/UsbRounded';
-import AddIcon from '@mui/icons-material/Add';
+import { Box, Stack } from '@mui/material';
+
+// import Box from '@mui/material/Box';
+// import  from '@mui/material/';
+import Grid from '@mui/material/Grid';
+import FlightIcon from '@mui/icons-material/Flight';
+import { Typography } from '@mui/material';
+
 import './Card.css';
-import { Box, Paper, Stack } from '@mui/material';
-const Card1 = () => {
+
+const Card3 = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2} justifyContent={'space-between'}>
@@ -67,7 +72,7 @@ const Card1 = () => {
                 }}
               >
                 <Button variant={'outlined'}>
-                  Dhaka <ArrowForwardIcon /> Dubai
+                  Dhaka <ArrowForwardIcon /> New york
                 </Button>
               </Typography>
               <div>
@@ -283,4 +288,4 @@ const Card1 = () => {
   );
 };
 
-export default Card1;
+export default Card3;

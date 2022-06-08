@@ -2,6 +2,7 @@ import React from 'react';
 import './Token.css';
 import Slider from 'react-slick';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
+import { Box } from '@mui/material';
 
 const Token = () => {
   var settings = {
@@ -40,15 +41,22 @@ const Token = () => {
   };
   return (
     <>
-      <div style={{ display: 'flex', margin: 'auto' }}>
-        <div className="bdcard">
+      <Box style={{ display: 'flex', margin: 'auto' }}>
+        <Box className="bdcard">
           <AcUnitIcon className="AcUnitIcon" />
-          <div>
+          <Box>
             <p>Tk</p>
             <h5>BDT 5628</h5>
-          </div>
-        </div>
-      </div>
+          </Box>
+        </Box>
+        <Box className="bdcard">
+          <AcUnitIcon className="AcUnitIcon" />
+          <Box>
+            <p>Tk</p>
+            <h5>BDT 5628</h5>
+          </Box>
+        </Box>
+      </Box>
     </>
   );
 };

@@ -8,6 +8,7 @@ import PrintIcon from '@mui/icons-material/Print';
 import FilterVintageIcon from '@mui/icons-material/FilterVintage';
 
 import { Box, Button, Grid, Paper } from '@mui/material';
+import Token from '../Token/Token';
 
 const AddToSave = () => {
   return (
@@ -100,7 +101,7 @@ const AddToSave = () => {
           </Grid>
         </Grid>
       </Card>
-      {/* <Token></Token> */}
+      <Token></Token>
     </Paper>
   );
 };
